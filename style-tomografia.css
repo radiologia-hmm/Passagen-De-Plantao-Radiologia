@@ -1,0 +1,54 @@
+/* style-tomografia.css */
+/* Herda o estilo base */
+@import url("style.css");
+
+/* === Ajustes específicos para TOMOGRAFIA === */
+
+/* Duas colunas */
+.duas-colunas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+/* Aparência das caixas */
+.duas-colunas .checklist-group {
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Título interno das seções */
+.duas-colunas .checklist-group h4 {
+  border-bottom: 1px solid #007bff;
+  margin-bottom: 6px;
+  padding-bottom: 3px;
+  color: #007bff;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+/* Checkbox mais limpo */
+.duas-colunas .checklist-group label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+  font-size: 0.85em;
+  line-height: 1.2;
+}
+
+.duas-colunas .checklist-group input[type="checkbox"] {
+  margin-right: 6px;
+  transform: scale(1.05);
+}
+
+/* Garantir layout legível no PDF */
+@media print {
+  .section-card {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}

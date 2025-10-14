@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check-list de Passagem de Plantão - Raios-X</title>
+  <!-- CSS exclusivo para Raios-X -->
+  <link rel="stylesheet" href="style-raiox.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="container" id="mainContainer">
+    <h1>CHECK - LIST</h1>
+    <h2>PASSAGEM DE PLANTÃO - RAIO-X</h2>
+    <p class="hospital-info">
+      Secretaria Municipal de Saúde<br>
+      Hospital Municipal de Marabá
+    </p>
+
+    <form id="checklistForm">
+
+      <!-- === I. INFORMAÇÕES DO PLANTÃO === -->
+      <section class="section-card">
+        <h3>Informações do Plantão</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="dataEntrada">Data Entrada:</label>
+            <input type="date" id="dataEntrada" name="dataEntrada" required>
+          </div>
+          <div class="form-group">
+            <label for="horasEntrada">Horas Entrada:</label>
+            <input type="time" id="horasEntrada" name="horasEntrada" required>
+          </div>
+          <div class="form-group">
+            <label for="dataSaida">Data Saída:</label>
+            <input type="date" id="dataSaida" name="dataSaida" required>
+          </div>
+          <div class="form-group">
+            <label for="horasSaida">Horas Saída:</label>
+            <input type="time" id="horasSaida" name="horasSaida" required>
+          </div>
+
+          <!-- Nome Completo ocupa toda a linha -->
+          <div class="form-group" id="nome-completo">
+            <label for="nomeEntrada">Nome Completo:</label>
+            <input type="text" id="nomeEntrada" name="nomeEntrada" required>
+          </div>
+        </div>
+      </section>
+
+      <!-- === I. SALA DE PROCESSAMENTO DE IMAGEM === -->
+      <section class="section-card">
+        <h3>I. Sala de Processamento de Imagem</h3>
+        <div class="duas-colunas">
+
+          <!-- Coluna A -->
+          <div class="checklist-group">
+            <h4>Equipamentos Principais:</h4>
+            <label><input type="checkbox" name="monitorRaios-x" value="ok"> Monitor Raios-x</label>
+            <label><input type="checkbox" name="monitorLaudos" value="ok"> Monitor Laudos</label>
+            <label><input type="checkbox" name="mouseRaios-x" value="ok"> Mouse Raios-x</label>
+            <label><input type="checkbox" name="tecladoRaios-x" value="ok"> Teclado Raios-x</label>
+            <label><input type="checkbox" name="impressoraDicom" value="ok"> Impressora DICOM</label>
+          </div>
+
+          <div class="checklist-group">
+            <h4>Higiene e Suprimentos:</h4>
+            <label><input type="checkbox" name="vasilhameAlcool" value="ok"> Vasilhame de Álcool</label>
+            <label><input type="checkbox" name="bebedouro" value="ok"> Bebedouro</label>
+            <label><input type="checkbox" name="aguaProcessamento" value="ok"> Água</label>
+          </div>
+
+          <!-- Coluna B -->
+          <div class="checklist-group">
+            <h4>Conforto e Organização:</h4>
+            <label><input type="checkbox" name="CadeiraRaios-x" value="ok"> Cadeira Principal</label>
+            <label><input type="checkbox" name="CadeiraSecundaria" value="ok"> Cadeira Secundária</label>
+            <label><input type="checkbox" name="canetas" value="ok"> Canetas</label>
+          </div>
+
+          <div class="checklist-group">
+            <h4>Climatização:</h4>
+            <label><input type="checkbox" name="centralArProcessamento" value="ok"> Central de Ar</label>
+            <label><input type="checkbox" name="controleCentraisAr" value="ok"> Controle Centrais de Ar</label>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- === II. SALA DE EXAME === -->
+      <section class="section-card page-break-before">
+        <h3>II. Sala de Exame</h3>
+        <div class="duas-colunas">
+
+          <!-- Coluna A -->
+          <div class="checklist-group">
+            <h4>Equipamentos e Acessórios Essenciais:</h4>
+            <label><input type="checkbox" name="centralArExame" value="ok"> Centrais de Ar</label>
+            <label><input type="checkbox" name="lixeiros" value="ok"> Lixeiros Infectantes e Comum</label>
+            <label><input type="checkbox" name="Raios-xMóvel" value="ok"> Raios-x Móvel</label>
+            <label><input type="checkbox" name="aventaisPlumbiferos" value="ok"> Aventais Plumbíferos</label>
+            <label><input type="checkbox" name="cabidesAventais" value="ok"> Cabides dos Aventais</label>
+            <label><input type="checkbox" name="cadeiraAcompanhante" value="ok"> Cadeira para Acompanhante</label>
+          </div>
+
+          <!-- Coluna B -->
+          <div class="checklist-group">
+            <h4>Suprimentos e Higiene:</h4>
+            <label><input type="checkbox" name="lencois" value="ok"> Lençóis</label>
+            <label><input type="checkbox" name="compressas" value="ok"> Compressas</label>
+            <label><input type="checkbox" name="batas" value="ok"> Batas</label>
+            <label><input type="checkbox" name="luvas" value="ok"> Luvas</label>
+            <label><input type="checkbox" name="aguaOxigenada" value="ok"> Água Oxigenada</label>
+            <label><input type="checkbox" name="alcoolExame" value="ok"> Álcool</label>
+            <label><input type="checkbox" name="papelHigienico" value="ok"> Papel Higiênico</label>
+            <label><input type="checkbox" name="papelToalha" value="ok"> Papel Toalha</label>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- === III. CONDIÇÕES AMBIENTAIS === -->
+      <section class="section-card">
+        <h3>III. Condições Ambientais e Limpeza</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="temperatura">Temperatura:</label>
+            <input type="number" id="temperatura" name="temperatura" step="0.1" placeholder="Ex: 22.5">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="limpezaSetor">Limpeza do Setor:</label>
+          <select id="limpezaSetor" name="limpezaSetor">
+            <option value="">Selecione</option>
+            <option value="realizada">Realizada</option>
+            <option value="naoRealizada">Não Realizada</option>
+            <option value="necessitaAdicional">Necessita de Limpeza Adicional</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- === IV. OBSERVAÇÕES === -->
+      <section class="section-card">
+        <h3>IV. Observações Importantes</h3>
+        <textarea id="observacoes" name="observacoes" rows="8"
+          placeholder="Registre aqui qualquer anomalia, necessidade de manutenção, falta de material, equipamentos com defeito, ou qualquer outra informação relevante para a passagem de plantão."></textarea>
+       
+      </section>
+      <!-- === V. ASSINATURAS === -->
+      <section class="section-card page-break-before">
+        <h3>V. Assinaturas de Responsáveis</h3>
+        <div class="form-group">
+          <h4>Profissional que está entrando:</h4>
+          <label for="nomeEntrada">Nome Completo:</label>
+          <input type="text" id="nomeEntrada" name="nomeEntrada" required>
+          <label for="assinaturaEntrada">Assinatura (digite seu nome):</label>
+          <input type="text" id="assinaturaEntrada" name="assinaturaEntrada" required>
+          <label for="matriculaEntrada">Matrícula:</label>
+          <input type="text" id="matriculaEntrada" name="matriculaEntrada" required>
+        </div>
+
+        <div class="form-group">
+          <h4>Profissional que está saindo:</h4>
+          <label for="nomeSaida">Nome Completo:</label>
+          <input type="text" id="nomeSaida" name="nomeSaida" required>
+          <label for="assinaturaSaida">Assinatura (digite seu nome):</label>
+          <input type="text" id="assinaturaSaida" name="assinaturaSaida" required>
+          <label for="matriculaSaida">Matrícula:</label>
+          <input type="text" id="matriculaSaida" name="matriculaSaida" required>
+        </div>
+      </section>
+
+      <button type="submit" id="btnGerarPDF">Gerar PDF do Check-list</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

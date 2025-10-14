@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SETOR</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 50vh;
+      background-color: #f4f7f6;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 10px;
+    }
+
+    .logo-main {
+      max-height: 650px;
+      max-width: 450px;
+      height: auto;
+      width: auto;
+      margin-bottom: 0,5px;
+    }
+
+    .selection-container {
+      background: white;
+      padding: 60px 80px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    h1 {
+      color: #0056b3;
+      margin-bottom: 60px;
+      font-size: 1.8em;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 25px;
+      margin: 20px 0;
+      font-size: 1.2em;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .logo-main {
+        max-height: 120px;
+        max-width: 160px;
+        margin-bottom: 20px;
+      }
+      
+      .selection-container {
+        padding: 40px 30px;
+      }
+      
+      h1 {
+        font-size: 1.5em;
+        margin-bottom: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo-main {
+        max-height: 100px;
+        max-width: 140px;
+        margin-bottom: 15px;
+      }
+      
+      .selection-container {
+        padding: 30px 20px;
+      }
+      
+      h1 {
+        font-size: 1.3em;
+        margin-bottom: 30px;
+      }
+      
+      .btn {
+        padding: 20px;
+        font-size: 1.1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- LOGO ACIMA DO FORMULÁRIO -->
+  <img src="img/logo.png" alt="Logo HMM" class="logo-main">
+  
+  <div class="selection-container">
+    <h1>SETOR</h1>
+    <button class="btn" onclick="location.href='form-raiox.html'">🩻 Raios-X</button>
+    <button class="btn" onclick="location.href='form-tomografia.html'">🧠 Tomografia</button>
+  </div>
+</body>
+</html>
